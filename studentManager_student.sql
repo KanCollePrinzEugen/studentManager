@@ -1,0 +1,11 @@
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (1, '狗', '1234', 24, '福建福州');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (2, '瞿颖', '6666', 23, '福建福州');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (3, '屈瀛', '7898', 23, '福建福州');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (4, '宋婷婷', '1111', 23, '福建闽侯');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (5, '翁功平', '2222', 23, '福建闽侯');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (6, '杨老龙', '3333', 23, '江西上饶');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (7, '杨小鸡', '9999', 23, '浙江杭州');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (8, '杨小鸭', '5555', 23, '安徽合肥');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (9, '杨小猪', '7777', 23, '北京');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (10, '杨小狗', '8888', 23, '天津');
+INSERT INTO studentManager.student (sno, sname, pwd, age, address) VALUES (11, '威海卫', '1234', 35, '上海');
