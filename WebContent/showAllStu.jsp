@@ -21,8 +21,16 @@
             border-collapse: collapse;
         }
         th, td{
-            border: 1px solid black;
+            border: 1px solid #999999;
             text-align: center;
+            width: 110px;
+            height: 35px;
+            border:2px inset #ffffff;
+        }
+        th{
+            background-color:#00A5FF;
+            color:#FFFFFF;
+            font-weight: bold;
         }
         .topBox{
             /*height: 60px;*/
@@ -34,6 +42,9 @@
             position: absolute;
             /*border-radius: 2px;*/
         }
+        .searchBox{
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
@@ -42,10 +53,6 @@
         <h1 style=" margin-left: 30px; color: white">全体学生列表</h1>
     </div>
     <div class="content">
-        <div class="searchBox">
-            请输入要查询的页号：
-            <input type="number" maxlength="">
-        </div>
         <table align="center">
             <tr>
                 <th>姓名</th>
@@ -74,6 +81,10 @@
                 }
             %>
         </table>
+        <div class="searchBox">
+            请输入要查询的页号：
+            <input type="number" maxlength="">
+        </div>
     </div>
 </div>
 </body>

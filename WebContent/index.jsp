@@ -41,14 +41,14 @@
 </head>
 
 <body>
-<div class="bigBox">
-   <h1 align="center">欢迎使用学生管理系统</h1>
-    <a href="login.jsp">
-        <button type="button">登录</button>
-    </a> <p>
-    <button type="button"  href="register.jsp">注册</button> <p>
-<%--   <a style="font-size: medium" href="modify.jsp">修改学生信息</a> <p>--%>
-<%--   <a style="font-size: medium" href="delete.jsp">删除学生信息</a> <p>--%>
-</div>
+    <div class="bigBox">
+       <h1 align="center">欢迎使用学生管理系统</h1>
+        <a href="login.jsp">
+            <button type="button">登录</button>
+        </a>
+        <a href="register.jsp">
+            <button type="button">注册</button>
+        </a> 
+    </div>
 </body>
 </html>

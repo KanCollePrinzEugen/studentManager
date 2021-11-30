@@ -50,6 +50,7 @@
       border: 1px solid;
       left: auto;
       margin: auto;
+      color: lightgray;
     }
     .main_func{
       width: 100px;
@@ -59,6 +60,8 @@
     }
     .txt_link{
       margin: auto;
+      color: black;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -72,7 +75,7 @@
     <div class="topBox">
       <h1 style=" margin-left: 30px; color: white">欢迎使用学生管理系统！<%= stuName%>!</h1>
     </div>
-    <h2 style="top: 75px; left: 50px; position: absolute">功能面板</h2>
+    <h2 style="top: 70px; left: 50px; position: absolute">功能面板</h2>
     <div class="divideBox"></div>
     <div class="content">
       <div class="main_func">

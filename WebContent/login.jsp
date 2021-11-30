@@ -10,7 +10,7 @@
     }
     .bigBox{
         width: 500px;
-        height: 250px;
+        height: 300px;
         text-align: center;
         font-family: "PingFang SC", STHeiti, serif;
         margin: 10% auto 0;
@@ -18,6 +18,9 @@
         background-color: cornsilk;
         -webkit-box-shadow: 4px 4px 5px #999;
         box-shadow: 4px 4px 5px #999;
+    }
+    h1{
+        margin-bottom: 30px;
     }
     form{
         width: 250px;
@@ -39,7 +42,7 @@
         height: 20px;
     }
     tr{
-        height: 40px;
+        height: 50px;
     }
     .submitButton{
         width: 200px;
@@ -52,7 +55,7 @@
         font-size: 15px;
         line-height: normal;
         /*border-radius: 5px;*/
-        margin: 10px auto;
+        margin: 40px auto;
     }
 </style>
 </head>
