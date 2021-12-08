@@ -1,6 +1,7 @@
 package work.stu.dao;
 
 import work.stu.po.Student;
+import work.stu.vo.StuListByPage;
 
 import java.util.ArrayList;
 
@@ -52,4 +53,11 @@ public interface StuDao {
      * @return  返回1修改成功，返回0修改失败
      */
     public int modifyStudent(int stuId, String studentName, String stuPassword, int stuAge, String stuAddress);
+
+    /**
+     * 按页获取学生信息
+     * @param pageNum       提交查询的页号
+     * @return  获取该页学生信息打包的学生类列表
+     */
+    public StuListByPage getStudentByPage(int pageNum);
 }

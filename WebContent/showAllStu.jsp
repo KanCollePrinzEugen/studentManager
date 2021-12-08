@@ -7,7 +7,7 @@
   Time: 5:16 下午
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>学生列表</title>
@@ -15,13 +15,14 @@
         .content{
             position: relative;
             top: 100px;
+            margin: auto;
+            width: 500px;
         }
         table{
-            /*top: 150px;*/
+            margin:10px auto;
             border-collapse: collapse;
         }
         th, td{
-            border: 1px solid #999999;
             text-align: center;
             width: 110px;
             height: 35px;
@@ -33,17 +34,59 @@
             font-weight: bold;
         }
         .topBox{
-            /*height: 60px;*/
             background-color: #4a77d4;
             color: white;
             top: 0;
             left: 0;
             width: 100%;
             position: absolute;
-            /*border-radius: 2px;*/
         }
         .searchBox{
-            margin-left: auto;
+            margin: auto;
+            text-align: center;
+            width: 410px;
+            height: 100px;
+        }
+        .page_button{
+            width: 100px;
+            min-height: 20px;
+            display: block;
+            background-color: #4ad471;
+            border: 1px solid #37bc49;
+            color: #fff;
+            padding: 9px 14px;
+            font-size: 15px;
+            line-height: normal;
+            /*border-radius: 5px;*/
+            margin: 0 20px auto;
+            float: left;
+        }
+        .submit_button{
+            width: 100px;
+            min-height: 20px;
+            display: block;
+            background-color: #4a77d4;
+            border: 1px solid #3762bc;
+            color: #fff;
+            padding: 9px 14px;
+            font-size: 15px;
+            line-height: normal;
+            margin: auto;
+        }
+        .page_adjust{
+            margin: auto;
+            width: 280px;
+            height: 50px;
+        }
+        .search_label{
+            float: left;
+            margin: auto 10px;
+            position: relative;
+            top: 5px;
+        }
+        .input_txt{
+            width: 100px;
+            height: 30px;
         }
     </style>
 </head>
@@ -53,7 +96,7 @@
         <h1 style=" margin-left: 30px; color: white">全体学生列表</h1>
     </div>
     <div class="content">
-        <table align="center">
+        <table>
             <tr>
                 <th>姓名</th>
                 <th>年龄</th>
@@ -81,10 +124,19 @@
                 }
             %>
         </table>
-        <div class="searchBox">
-            请输入要查询的页号：
-            <input type="number" maxlength="">
-        </div>
+        <form>
+            <div class="page_adjust">
+                <button class="page_button" type="button">上一页</button>
+                <button class="page_button" type="button">下一页</button>
+            </div>
+            <div class="searchBox">
+                <label class="search_label">
+                    请输入要查询的页号：
+                    <input class="input_txt" type="number" maxlength="">
+                </label>
+                <input class="submit_button" type="submit" value="查询">
+            </div>
+        </form>
     </div>
 </div>
 </body>

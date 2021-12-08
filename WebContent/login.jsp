@@ -39,7 +39,7 @@
     }
     .inputText {
         width: 200px;
-        height: 20px;
+        height: 30px;
     }
     tr{
         height: 50px;

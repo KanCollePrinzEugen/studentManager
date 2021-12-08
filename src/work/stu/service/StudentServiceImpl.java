@@ -3,6 +3,7 @@ package work.stu.service;
 import work.stu.dao.StuDao;
 import work.stu.dao.StuDaoImpl;
 import work.stu.po.Student;
+import work.stu.vo.StuListByPage;
 
 import java.util.ArrayList;
 
@@ -40,5 +41,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public ArrayList<Student> getAllStudent() {
         return dao.getAllStudent();
+    }
+
+    @Override
+    public StuListByPage getStudentListByPage(int pageNum) {
+        return dao.getStudentByPage(pageNum);
     }
 }

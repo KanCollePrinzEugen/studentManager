@@ -1,6 +1,8 @@
 package work.stu.dao;
 
 import work.stu.po.Student;
+import work.stu.utils.DBTools;
+import work.stu.vo.StuListByPage;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -118,12 +120,67 @@ public class StuDaoImpl implements StuDao{
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentManager?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=GMT","root","1145141919810");
             stmt = conn.createStatement();
             String sqlSt = "UPDATE student SET sname = '"+stuName+"', pwd = '"+stuPassword+"', age = "+stuAge+", address = '"+stuAddress+"' WHERE sno = "+stuId+"";
-            //"UPDATE student SET sname = '"+stuName+"', pwd = '"+stuPassword+"', age = '"+stuAge+"', address = '"+stuAddress+"' WHERE sno = "+stuId+"";
             System.out.println(sqlSt);
             return stmt.executeUpdate(sqlSt);
         } catch(ClassNotFoundException | SQLException e){
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public StuListByPage getStudentByPage(int pageNum) {
+        try {
+            /*连接数据库*/
+            Class.forName(DBTools.DRIVER_CLASS);
+            conn = DriverManager.getConnection(DBTools.CONNECT_STR, DBTools.USER, DBTools.PASSWORD);
+            stmt = conn.createStatement();
+            /*执行查询语句
+            * 先获取表中信息数*/
+            String sqlSt = "SELECT COUNT(*) FROM student";
+            rs = stmt.executeQuery(sqlSt);
+            rs.next();
+            /*定义一个页可以显示的信息条数的值
+            * 和数据库信息行数算出表格的页面数*/
+            int pageSize = 5;
+            int totalRows = rs.getInt(1);
+            int totalPages = 0;
+            if (totalRows % pageSize == 0){
+                totalPages = totalRows / pageSize;
+            }else{
+                totalPages = totalRows / pageSize + 1;
+            }
+            /*计算一页表格显示开始的位置*/
+            if (pageNum < 1){
+                pageNum = 1;
+            }
+            if (pageNum > totalPages){
+                pageNum = totalPages;
+            }
+            int startPosition = (pageNum - 1) * pageSize;
+            /*执行查询语句，获取制定位置的学生信息*/
+            sqlSt = "SELECT * FROM student LIMIT " + startPosition + "," + pageSize;
+            rs = stmt.executeQuery(sqlSt);
+            /*包装学生类*/
+            ArrayList<Student> getStudents = new ArrayList<>();
+            do{
+                int _stuId = rs.getInt(1);
+                String _stuName = rs.getString(2);
+                String _stuPassword = rs.getString(3);
+                int _stuAge = rs.getInt(4);
+                String _stuAddress = rs.getString(5);
+
+                Student student = new Student(_stuId, _stuName, _stuPassword, _stuAge, _stuAddress);
+                System.out.println(student);
+                getStudents.add(student);
+            }while(rs.next());
+            StuListByPage studentList = new StuListByPage(getStudents, pageNum, totalPages);
+            return studentList;
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }

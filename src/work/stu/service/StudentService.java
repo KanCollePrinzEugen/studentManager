@@ -1,6 +1,7 @@
 package work.stu.service;
 
 import work.stu.po.Student;
+import work.stu.vo.StuListByPage;
 
 import java.util.ArrayList;
 
@@ -18,4 +19,6 @@ public interface StudentService {
     public Student login(int stuId, String stuPassword);
 
     public ArrayList<Student> getAllStudent();
+
+    public StuListByPage getStudentListByPage(int pageNum);
 }
