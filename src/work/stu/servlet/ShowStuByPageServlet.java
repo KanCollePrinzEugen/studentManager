@@ -2,6 +2,7 @@ package work.stu.servlet;
 
 import work.stu.service.StudentService;
 import work.stu.service.StudentServiceImpl;
+import work.stu.vo.StuListByPage;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,5 +26,7 @@ public class ShowStuByPageServlet extends HttpServlet {
         HttpSession httpSession = req.getSession();
 
         int pageNum = Integer.parseInt(req.getParameter("pageNum"));
+        StuListByPage stuList = service.getStudentListByPage(pageNum);
+
     }
 }

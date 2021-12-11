@@ -42,7 +42,8 @@
         height: 30px;
     }
     tr{
-        height: 50px;
+        height: 60px;
+        margin-bottom: 10px;
     }
     .submitButton{
         width: 200px;
@@ -55,7 +56,7 @@
         font-size: 15px;
         line-height: normal;
         /*border-radius: 5px;*/
-        margin: 40px auto;
+        margin: 20px auto;
     }
 </style>
 </head>

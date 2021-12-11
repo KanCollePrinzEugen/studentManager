@@ -140,17 +140,17 @@ public class StuDaoImpl implements StuDao{
             String sqlSt = "SELECT COUNT(*) FROM student";
             rs = stmt.executeQuery(sqlSt);
             rs.next();
-            /*定义一个页可以显示的信息条数的值
+            /*定义一个页可以显示的信息条数的值(pageSize)
             * 和数据库信息行数算出表格的页面数*/
             int pageSize = 5;
             int totalRows = rs.getInt(1);
-            int totalPages = 0;
+            int totalPages;
             if (totalRows % pageSize == 0){
                 totalPages = totalRows / pageSize;
             }else{
                 totalPages = totalRows / pageSize + 1;
             }
-            /*计算一页表格显示开始的位置*/
+            /*应对输入的非法位置*/
             if (pageNum < 1){
                 pageNum = 1;
             }
@@ -174,6 +174,7 @@ public class StuDaoImpl implements StuDao{
                 System.out.println(student);
                 getStudents.add(student);
             }while(rs.next());
+//            将学生列表、页面总数和当前位置包装为单独的一个类
             StuListByPage studentList = new StuListByPage(getStudents, pageNum, totalPages);
             return studentList;
         } catch (ClassNotFoundException e){

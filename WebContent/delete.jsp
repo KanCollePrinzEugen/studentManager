@@ -8,32 +8,59 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <style type="text/css">
+    body {
+        background-color: azure;
+    }
     .box{
         width: 500px;
-        height: 220px;
-        border: 1px black solid;
+        height: 300px;
+        text-align: center;
+        font-family: "PingFang SC", STHeiti, serif;
         margin: 10% auto 0;
-        /*padding-left: 80px;*/
-        /*padding-top: 30px;*/
+        padding: 25px;
+        background-color: cornsilk;
+        -webkit-box-shadow: 4px 4px 5px #999;
+        box-shadow: 4px 4px 5px #999;
     }
     form{
-        width: 250px;
+        width: 230px;
         height: 220px;
         margin: auto;
     }
     table{
-        width: 250px;
+        width: 230px;
         height: 220px;
+        margin: auto;
     }
     .rightTD{
-        width: 170px;
-
+        width: 200px;
+        margin: auto;
     }
     .leftTD{
         width: 80px;
-
     }
-
+    .inputText {
+        width: 230px;
+        height: 35px;
+        margin: auto;
+    }
+    .submitButton{
+        width: 200px;
+        min-height: 20px;
+        display: block;
+        background-color: #4a77d4;
+        border: 1px solid #3762bc;
+        color: #fff;
+        padding: 9px 14px;
+        font-size: 15px;
+        line-height: normal;
+        /*border-radius: 5px;*/
+        margin: 30px auto;
+    }
+    tr{
+        height: 60px;
+        margin-bottom: 10px;
+    }
 </style>
 <head>
     <title>删除学生信息</title>
@@ -42,26 +69,28 @@
 <div class="box">
     <form action="DeleteServlet" method="post">
         <table>
-            <tr>
-                <td colspan="2" align="center" style="font-size:20px">
-                    请输入要删除的学生信息
+            <tr class="title">
+                <td align="center" style="font-size:20px">
+                    <h1 style="font-size: 20px">请输入要删除的学生信息</h1>
                 </td>
             </tr>
             <tr>
-                <td class="leftTD"> 学号：</td>
                 <td class="rightTD">
-                    <input type="text" name="sno"/>
+                    <label>
+                        <input class="inputText" type="text" name="sno" placeholder="学号"/>
+                    </label>
                 </td>
             </tr>
             <tr>
-                <td class="leftTD"> 密码：</td>
                 <td class="rightTD">
-                    <input type="text" name="pwd"/>
+                    <label>
+                        <input class="inputText" type="text" name="pwd" placeholder="密码"/>
+                    </label>
                 </td>
             </tr>
             <tr>
-                <td class="leftTD" colspan="2" style="text-align: center;">
-                    <input type="submit" value="删除">
+                <td class="leftTD" style="text-align: center;">
+                    <input class="submitButton" type="submit" value="删除">
                 </td>
             </tr>
         </table>
