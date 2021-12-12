@@ -142,7 +142,7 @@ public class StuDaoImpl implements StuDao{
             rs.next();
             /*定义一个页可以显示的信息条数的值(pageSize)
             * 和数据库信息行数算出表格的页面数*/
-            int pageSize = 5;
+            int pageSize = 6;
             int totalRows = rs.getInt(1);
             int totalPages;
             if (totalRows % pageSize == 0){
@@ -163,6 +163,9 @@ public class StuDaoImpl implements StuDao{
             rs = stmt.executeQuery(sqlSt);
             /*包装学生类*/
             ArrayList<Student> getStudents = new ArrayList<>();
+            if (!rs.next()) {
+                return null;
+            }
             do{
                 int _stuId = rs.getInt(1);
                 String _stuName = rs.getString(2);

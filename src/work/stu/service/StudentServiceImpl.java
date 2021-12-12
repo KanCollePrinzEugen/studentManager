@@ -47,4 +47,6 @@ public class StudentServiceImpl implements StudentService {
     public StuListByPage getStudentListByPage(int pageNum) {
         return dao.getStudentByPage(pageNum);
     }
+
+
 }

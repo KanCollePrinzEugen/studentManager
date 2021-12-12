@@ -1,5 +1,6 @@
 package work.stu.servlet;
 
+import work.stu.po.Student;
 import work.stu.service.StudentService;
 import work.stu.service.StudentServiceImpl;
 import work.stu.vo.StuListByPage;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author prinzeugen
@@ -25,8 +27,16 @@ public class ShowStuByPageServlet extends HttpServlet {
         StudentService service = new StudentServiceImpl();
         HttpSession httpSession = req.getSession();
 
-        int pageNum = Integer.parseInt(req.getParameter("pageNum"));
-        StuListByPage stuList = service.getStudentListByPage(pageNum);
+        int reqPageNum = Integer.parseInt(req.getParameter("pageNum"));
+        StuListByPage stuListAndPage = service.getStudentListByPage(reqPageNum);
+        ArrayList<Student> stuList = stuListAndPage.getStudentList();
+        int totalPages = stuListAndPage.getTotalPages();
+        int currentPageNum = stuListAndPage.getPageNum();
 
+        httpSession.setAttribute("totalPages", totalPages);
+        httpSession.setAttribute("currentPageNum", currentPageNum);
+        httpSession.setAttribute("stuList", stuList);
+
+        resp.sendRedirect("showAllStu.jsp");
     }
 }

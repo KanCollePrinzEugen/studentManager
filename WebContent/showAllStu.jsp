@@ -15,8 +15,11 @@
         .content{
             position: relative;
             top: 100px;
-            margin: auto;
+            margin:100px auto;
             width: 500px;
+        }
+        .tabContent{
+            height: 250px;
         }
         table{
             margin:10px auto;
@@ -47,7 +50,7 @@
             width: 410px;
             height: 100px;
         }
-        .page_button{
+        .changePageButton{
             width: 100px;
             min-height: 20px;
             display: block;
@@ -61,7 +64,7 @@
             margin: 0 20px auto;
             float: left;
         }
-        .submit_button{
+        .submitButton{
             width: 100px;
             min-height: 20px;
             display: block;
@@ -73,20 +76,49 @@
             line-height: normal;
             margin: auto;
         }
-        .page_adjust{
-            margin: auto;
-            width: 280px;
+        .pageAdjust{
+            margin: 30px auto;
+            width: 600px;
             height: 50px;
         }
-        .search_label{
+        .searchLabel{
             float: left;
             margin: auto 10px;
             position: relative;
-            top: 5px;
         }
-        .input_txt{
+        .inputText{
             width: 100px;
             height: 30px;
+        }
+        .pageButton{
+            height: 35px;
+            width: 35px;
+            display: block;
+            background-color: #4ad471;
+            border: 1px solid #37bc49;
+            color: #fff;
+            /*padding: 9px 9px;*/
+            text-align: center;
+            font-size: 15px;
+            line-height: normal;
+            border-radius: 5px;
+            margin: 0 5px auto;
+            float: left;
+        }
+        .currentPageButton{
+            height: 35px;
+            width: 35px;
+            display: block;
+            background-color: #298945;
+            border: 1px solid #166621;
+            color: #fff;
+            /*padding: 9px 9px;*/
+            text-align: center;
+            font-size: 15px;
+            line-height: normal;
+            border-radius: 5px;
+            margin: 0 5px auto;
+            float: left;
         }
     </style>
 </head>
@@ -96,45 +128,110 @@
         <h1 style=" margin-left: 30px; color: white">全体学生列表</h1>
     </div>
     <div class="content">
-        <table>
-            <tr>
-                <th>姓名</th>
-                <th>年龄</th>
-                <th>地址</th>
-            </tr>
-            <%
-                /*获取学生列表*/
-                ArrayList<Student> allStu = (ArrayList<Student>) request.getSession().getAttribute("allStudent");
-                /*提取学生信息*/
-                for (Student stu : allStu) {
-                    String name = stu.getStuName();
-                    int age = stu.getStuAge();
-                    String address = stu.getStuAddress();
-            %>
-            <%--循环输出学生信息--%>
-            <tr>
-                <td><%= name%>
-                </td>
-                <td><%= age%>
-                </td>
-                <td><%= address%>
-                </td>
-            </tr>
-            <%
-                }
-            %>
-        </table>
-        <form>
-            <div class="page_adjust">
-                <button class="page_button" type="button">上一页</button>
-                <button class="page_button" type="button">下一页</button>
+        <div class="tabContent">
+            <table>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>地址</th>
+                </tr>
+                <%
+                    /*获取学生列表*/
+//                ArrayList<Student> allStu = (ArrayList<Student>) request.getSession().getAttribute("allStudent");
+                    ArrayList<Student> stuList = (ArrayList<Student>) request.getSession().getAttribute("stuList");
+                    int totalPages = (Integer) request.getSession().getAttribute("totalPages");
+                    int currentPage = (Integer) request.getSession().getAttribute("currentPageNum");
+                    /*提取学生信息*/
+                    for (Student stu : stuList) {
+                        String name = stu.getStuName();
+                        int age = stu.getStuAge();
+                        String address = stu.getStuAddress();
+                %>
+                <%--循环输出学生信息--%>
+                <tr>
+                    <td><%= name%>
+                    </td>
+                    <td><%= age%>
+                    </td>
+                    <td><%= address%>
+                    </td>
+                </tr>
+                <%
+                    }
+                %>
+            </table>
+        </div>
+        <form action="ShowStuByPageServlet">
+            <div class="pageAdjust">
+                <button class="changePageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>" style="text-decoration:none; color: #FFFFFF">上一页</a>
+                </button>
+
+                <%
+                    if (1 == currentPage){
+                %>
+                <button class="currentPageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
+                    <%
+                    } else {
+                    %>
+                </button>
+                <button class="pageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
+                </button>
+                <%
+                    }
+                %>
+
+                <%
+                    for (int i = 2; i < totalPages; i++) {
+                        if (i == currentPage){
+                %>
+                <button class="currentPageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%></a>
+                <%
+                        } else {
+                %>
+                </button>
+                <button class="pageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%></a>
+                </button>
+                <%
+                        }
+                    }
+                %>
+
+                <%
+                    if (totalPages == currentPage){
+                %>
+                <button class="currentPageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>" style="color: #fff; text-decoration:none"><%=totalPages%></a>
+                    <%
+                    } else {
+                    %>
+                </button>
+                <button class="pageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>" style="color: #fff; text-decoration:none"><%=totalPages%></a>
+                </button>
+                <%
+                    }
+                %>
+
+                <button class="changePageButton" type="button">
+                    <a href="ShowStuByPageServlet?pageNum=<%=currentPage+1%>" style="text-decoration:none; color: #FFFFFF">下一页</a>
+                </button>
+            </div>
+            <div>
+                <p style="float: left;">当前是第<%=currentPage%>页
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    总共有<%=totalPages%>页 </p>
             </div>
             <div class="searchBox">
-                <label class="search_label">
+                <label class="searchLabel">
                     请输入要查询的页号：
-                    <input class="input_txt" type="number" maxlength="">
+                    <input class="inputText" type="number" min="1" max="<%= totalPages%>" name="pageNum">
                 </label>
-                <input class="submit_button" type="submit" value="查询">
+                <input class="submitButton" type="submit" value="查询">
             </div>
         </form>
     </div>

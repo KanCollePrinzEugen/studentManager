@@ -17,4 +17,16 @@ public class StuListByPage {
         this.pageNum = pageNum;
         this.totalPages = totalPages;
     }
+
+    public ArrayList<Student> getStudentList() {
+        return studentList;
+    }
+
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public int getTotalPages() {
+        return totalPages;
+    }
 }

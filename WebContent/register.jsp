@@ -34,7 +34,7 @@
     .leftTD{
         width: 80px;
     }
-    .input_txt{
+    .inputText{
         width: 200px;
         height: 20px;
     }

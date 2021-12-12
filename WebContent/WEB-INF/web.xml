@@ -64,4 +64,13 @@
     <url-pattern>/ShowAllStuServlet</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ShowStuByPageServlet</servlet-name>
+    <servlet-class>work.stu.servlet.ShowStuByPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowStuByPageServlet</servlet-name>
+    <url-pattern>/ShowStuByPageServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>
