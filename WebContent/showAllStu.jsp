@@ -16,7 +16,8 @@
             position: relative;
             top: 100px;
             margin:100px auto;
-            width: 500px;
+            width: auto;
+            text-align: center;
         }
         .tabContent{
             height: 250px;
@@ -45,7 +46,7 @@
             position: absolute;
         }
         .searchBox{
-            margin: auto;
+            margin:20px auto;
             text-align: center;
             width: 410px;
             height: 100px;
@@ -53,7 +54,7 @@
         .changePageButton{
             width: 100px;
             min-height: 20px;
-            display: block;
+            display: inline-block;
             background-color: #4ad471;
             border: 1px solid #37bc49;
             color: #fff;
@@ -77,9 +78,10 @@
             margin: auto;
         }
         .pageAdjust{
-            margin: 30px auto;
-            width: 600px;
+            margin: 30px auto 10px auto;
+            width: 415px;
             height: 50px;
+            text-align: center;
         }
         .searchLabel{
             float: left;
@@ -93,7 +95,7 @@
         .pageButton{
             height: 35px;
             width: 35px;
-            display: block;
+            display: inline-block;
             background-color: #4ad471;
             border: 1px solid #37bc49;
             color: #fff;
@@ -108,7 +110,7 @@
         .currentPageButton{
             height: 35px;
             width: 35px;
-            display: block;
+            display: inline-block;
             background-color: #298945;
             border: 1px solid #166621;
             color: #fff;
@@ -119,6 +121,18 @@
             border-radius: 5px;
             margin: 0 5px auto;
             float: left;
+        }
+        .pageAdjustContent{
+            margin: auto;
+            width: 300px;
+            height: 50px;
+            display: inline;
+        }
+        .pageInfo{
+            margin: auto;
+            width: 192px;
+            height: 30px;
+            text-align: center;
         }
     </style>
 </head>
@@ -163,66 +177,76 @@
         </div>
         <form action="ShowStuByPageServlet">
             <div class="pageAdjust">
-                <button class="changePageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>" style="text-decoration:none; color: #FFFFFF">上一页</a>
-                </button>
+                    <button class="changePageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>"
+                           style="text-decoration:none; color: #FFFFFF">上一页</a>
+                    </button>
+                <div class="pageAdjustContent">
 
-                <%
-                    if (1 == currentPage){
-                %>
-                <button class="currentPageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
                     <%
-                    } else {
+                        if (1 == currentPage) {
                     %>
-                </button>
-                <button class="pageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
-                </button>
-                <%
-                    }
-                %>
-
-                <%
-                    for (int i = 2; i < totalPages; i++) {
-                        if (i == currentPage){
-                %>
-                <button class="currentPageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%></a>
-                <%
+                    <button class="currentPageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
+                        <%
                         } else {
-                %>
-                </button>
-                <button class="pageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%></a>
-                </button>
-                <%
-                        }
-                    }
-                %>
-
-                <%
-                    if (totalPages == currentPage){
-                %>
-                <button class="currentPageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>" style="color: #fff; text-decoration:none"><%=totalPages%></a>
+                        %>
+                    </button>
+                    <button class="pageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
+                    </button>
                     <%
-                    } else {
+                        }
                     %>
-                </button>
-                <button class="pageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>" style="color: #fff; text-decoration:none"><%=totalPages%></a>
-                </button>
-                <%
-                    }
-                %>
 
-                <button class="changePageButton" type="button">
-                    <a href="ShowStuByPageServlet?pageNum=<%=currentPage+1%>" style="text-decoration:none; color: #FFFFFF">下一页</a>
-                </button>
+                    <%
+                        for (int i = 2; i < totalPages; i++) {
+                            if (i == currentPage) {
+                    %>
+                    <button class="currentPageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%>
+                        </a>
+                        <%
+                        } else {
+                        %>
+                    </button>
+                    <button class="pageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%>
+                        </a>
+                    </button>
+                    <%
+                            }
+                        }
+                    %>
+
+                    <%
+                        if (totalPages == currentPage) {
+                    %>
+                    <button class="currentPageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>"
+                           style="color: #fff; text-decoration:none"><%=totalPages%>
+                        </a>
+                        <%
+                        } else {
+                        %>
+                    </button>
+                    <button class="pageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>"
+                           style="color: #fff; text-decoration:none"><%=totalPages%>
+                        </a>
+                    </button>
+                    <%
+                        }
+                    %>
+
+                </div>
+                    <button class="changePageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                        <a href="ShowStuByPageServlet?pageNum=<%=currentPage+1%>"
+                           style="text-decoration:none; color: #FFFFFF">下一页</a>
+                    </button>
             </div>
-            <div>
-                <p style="float: left;">当前是第<%=currentPage%>页
+            <div class="pageInfo">
+                <p style="float: left; text-align: center; margin: auto">当前是第<%=currentPage%>页
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     总共有<%=totalPages%>页 </p>
             </div>
