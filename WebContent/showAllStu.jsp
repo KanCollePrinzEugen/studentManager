@@ -12,6 +12,17 @@
 <head>
     <title>学生列表</title>
     <style>
+        .divideBox{
+            /*height: 40px;*/
+            background-color: steelblue;
+            color: white;
+            border-radius: 2px;
+            height: 5px;
+            width: 100%;
+            top: 125px;
+            left: 0;
+            position: absolute;
+        }
         .content{
             position: relative;
             top: 100px;
@@ -79,7 +90,7 @@
         }
         .pageAdjust{
             margin: 30px auto 10px auto;
-            width: 415px;
+            width: 435px;
             height: 50px;
             text-align: center;
         }
@@ -93,8 +104,8 @@
             height: 30px;
         }
         .pageButton{
-            height: 35px;
-            width: 35px;
+            height: 40px;
+            width: 40px;
             display: inline-block;
             background-color: #4ad471;
             border: 1px solid #37bc49;
@@ -108,8 +119,8 @@
             float: left;
         }
         .currentPageButton{
-            height: 35px;
-            width: 35px;
+            height: 40px;
+            width: 40px;
             display: inline-block;
             background-color: #298945;
             border: 1px solid #166621;
@@ -140,6 +151,15 @@
 <div class="bigBox">
     <div class="topBox">
         <h1 style=" margin-left: 30px; color: white">全体学生列表</h1>
+    </div>
+    <div class="navBox">
+        <a href="main.jsp">
+            <svg style="top: 95px; left: 10px; position: absolute" t="1639403540811" class="icon"
+                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2304" width="25"
+                 height="25"><path d="M73.142857 490.569143L565.248 1024l95.085714-96.548571-320.512-343.332572 611.035429 1.462857v-146.285714H317.732571l344.649143-344.795429L565.248 0z" p-id="2305"></path></svg>
+        </a>
+        <a href="main.jsp"><h2 style="top: 77px; left: 45px; position: absolute; font-size: 20px; color: black">功能面板</h2></a>
+        <div class="divideBox"></div>
     </div>
     <div class="content">
         <div class="tabContent">
@@ -177,7 +197,7 @@
         </div>
         <form action="ShowStuByPageServlet">
             <div class="pageAdjust">
-                    <button class="changePageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="changePageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=currentPage-1%>'">
                         <a href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>"
                            style="text-decoration:none; color: #FFFFFF">上一页</a>
                     </button>
@@ -186,13 +206,13 @@
                     <%
                         if (1 == currentPage) {
                     %>
-                    <button class="currentPageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="currentPageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=1%>'">
                         <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
                         <%
                         } else {
                         %>
                     </button>
-                    <button class="pageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="pageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=1%>'">
                         <a href="ShowStuByPageServlet?pageNum=1" style="color: #fff; text-decoration:none">1</a>
                     </button>
                     <%
@@ -203,14 +223,14 @@
                         for (int i = 2; i < totalPages; i++) {
                             if (i == currentPage) {
                     %>
-                    <button class="currentPageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="currentPageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=i%>'">
                         <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%>
                         </a>
                         <%
                         } else {
                         %>
                     </button>
-                    <button class="pageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="pageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=i%>'">
                         <a href="ShowStuByPageServlet?pageNum=<%=i%>" style="color: #fff; text-decoration:none"><%=i%>
                         </a>
                     </button>
@@ -222,7 +242,7 @@
                     <%
                         if (totalPages == currentPage) {
                     %>
-                    <button class="currentPageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="currentPageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=totalPages%>'">
                         <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>"
                            style="color: #fff; text-decoration:none"><%=totalPages%>
                         </a>
@@ -230,7 +250,7 @@
                         } else {
                         %>
                     </button>
-                    <button class="pageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="pageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=totalPages%>'">
                         <a href="ShowStuByPageServlet?pageNum=<%=totalPages%>"
                            style="color: #fff; text-decoration:none"><%=totalPages%>
                         </a>
@@ -240,7 +260,7 @@
                     %>
 
                 </div>
-                    <button class="changePageButton" type="button" href="ShowStuByPageServlet?pageNum=<%=currentPage-1%>">
+                    <button class="changePageButton" type="button" onclick="location.href='ShowStuByPageServlet?pageNum=<%=currentPage+1%>'">
                         <a href="ShowStuByPageServlet?pageNum=<%=currentPage+1%>"
                            style="text-decoration:none; color: #FFFFFF">下一页</a>
                     </button>

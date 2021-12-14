@@ -5,9 +5,9 @@
   Time: 2:40 下午
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-<style type="text/css">
+<style>
     body {
         background-color: azure;
     }
@@ -67,6 +67,7 @@
 </head>
 <body>
 <div class="box">
+    <a href="main.jsp" style="position: relative; left: -225px; text-decoration: none">返回</a>
     <form action="DeleteServlet" method="post">
         <table>
             <tr class="title">
