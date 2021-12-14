@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/WebContent/index.html" value="file://$PROJECT_DIR$/WebContent" />
         <entry key="file://$PROJECT_DIR$/WebContent/login.jsp" value="file://$PROJECT_DIR$/WebContent" />
+        <entry key="file://$PROJECT_DIR$/WebContent/main.jsp" value="file://$PROJECT_DIR$/WebContent" />
         <entry key="file://$PROJECT_DIR$/WebContent/modify.jsp" value="file://$PROJECT_DIR$/WebContent" />
       </map>
     </option>

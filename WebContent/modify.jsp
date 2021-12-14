@@ -67,6 +67,7 @@
 </head>
 <body>
 <div class="bigBox">
+    <a href="main.jsp" style="position: relative; left: -225px; text-decoration: none">返回</a>
     <form action="ModifyServlet" method="post">
         <table>
             <tr>
