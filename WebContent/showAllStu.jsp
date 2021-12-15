@@ -148,7 +148,7 @@
     </style>
 </head>
 <body>
-<div class="bigBox">
+<div class="content">
     <div class="topBox">
         <h1 style=" margin-left: 30px; color: white">全体学生列表</h1>
     </div>

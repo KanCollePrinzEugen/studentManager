@@ -14,7 +14,7 @@
     body{
       /*background-color: beige;*/
     }
-    .bigBox{
+    .content{
       font-family: "PingFang SC", STHeiti, serif;
     }
     .topBox{
@@ -72,7 +72,7 @@
     Student student = (Student)session.getAttribute("student");
     String stuName = student.getStuName();
   %>
-  <div class="bigBox">
+  <div class="Content">
     <div class="topBox">
       <h1 style=" margin-left: 30px; color: white">欢迎使用学生管理系统！<%= stuName%>!</h1>
     </div>

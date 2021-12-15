@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <style type="text/css">
-    .box{
+    .content{
         width: 500px;
         height: 220px;
         border: 1px black solid;
@@ -39,7 +39,7 @@
     <title>修改学生信息</title>
 </head>
 <body>
-    <div class="box">
+    <div class="content">
         <form action="SearchServlet" method="post">
             <table>
                 <tr>

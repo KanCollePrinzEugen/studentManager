@@ -1,0 +1,42 @@
+body{
+    background-color: #00A5FF;
+ }
+.content{
+    width: 400px;
+    height: 300px;
+    /*float: right;*/
+    margin-top:100px;
+    margin-right: 100px;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    box-shadow: -5px 0px 10px 5px  royalblue;
+    background-color: white;
+    float: right;
+    border-radius:5px;
+}
+h1{
+    color: white;
+    margin-left: 20px;
+}
+button{
+    background-color: #3667ce;
+    border: 1px solid #1a46a1;
+    display: block;
+    text-align: center;
+    border: none;
+    border-radius:5px;
+    color:white;
+    width: 120px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 30px;
+}
+.buttonGroup{
+    margin-right: auto;
+    margin-top:75px;
+}
+a{
+    text-decoration:none;
+}

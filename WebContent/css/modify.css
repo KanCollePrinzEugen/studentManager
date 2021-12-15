@@ -1,0 +1,66 @@
+body {
+    background-color: #4ad471;
+}
+.content{
+    width: 425px;
+    height: 450px;
+    /*float: right;*/
+    margin-top:75px;
+    margin-right: 100px;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    box-shadow: -5px 0px 10px 5px green;
+    background-color: white;
+    float: right;
+    border-radius:5px;
+}
+h1{
+    color: white;
+    margin-left: 20px;
+    margin-top: 22px;
+}
+a{
+    position:relative;
+    top: 10px;
+    margin-left: 85px;
+}
+form{
+    width: 200px;
+    height: 220px;
+    margin: auto;
+}
+table{
+    width: 200px;
+    height: 220px;
+}
+.rightTD{
+    width: 200px;
+}
+.leftTD{
+    width: 80px;
+
+}
+tr{
+    height: 50px;
+}
+.modifyButton{
+    width: 200px;
+    min-height: 20px;
+    display: block;
+    background-color: #3667ce;
+    border: 1px solid #1a46a1;
+    color: #fff;
+    padding: 9px 14px;
+    font-size: 15px;
+    line-height: normal;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+.inputText {
+    width: 200px;
+    height: 30px;
+    margin: auto;
+}
+h2{
+    margin-top:15px;
+}

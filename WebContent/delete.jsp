@@ -7,72 +7,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-<style>
-    body {
-        background-color: azure;
-    }
-    .box{
-        width: 500px;
-        height: 300px;
-        text-align: center;
-        font-family: "PingFang SC", STHeiti, serif;
-        margin: 10% auto 0;
-        padding: 25px;
-        background-color: cornsilk;
-        -webkit-box-shadow: 4px 4px 5px #999;
-        box-shadow: 4px 4px 5px #999;
-    }
-    form{
-        width: 230px;
-        height: 220px;
-        margin: auto;
-    }
-    table{
-        width: 230px;
-        height: 220px;
-        margin: auto;
-    }
-    .rightTD{
-        width: 200px;
-        margin: auto;
-    }
-    .leftTD{
-        width: 80px;
-    }
-    .inputText {
-        width: 230px;
-        height: 35px;
-        margin: auto;
-    }
-    .submitButton{
-        width: 200px;
-        min-height: 20px;
-        display: block;
-        background-color: #4a77d4;
-        border: 1px solid #3762bc;
-        color: #fff;
-        padding: 9px 14px;
-        font-size: 15px;
-        line-height: normal;
-        /*border-radius: 5px;*/
-        margin: 30px auto;
-    }
-    tr{
-        height: 60px;
-        margin-bottom: 10px;
-    }
-</style>
 <head>
     <title>删除学生信息</title>
+    <link rel="stylesheet" href="css/delete.css">
 </head>
 <body>
-<div class="box">
+<h1>删除学生信息</h1>
+<div class="content">
     <a href="main.jsp" style="position: relative; left: -225px; text-decoration: none">返回</a>
     <form action="DeleteServlet" method="post">
         <table>
             <tr class="title">
-                <td align="center" style="font-size:20px">
-                    <h1 style="font-size: 20px">请输入要删除的学生信息</h1>
+                <td>
+                    <h2 style="font-size: 20px">请输入要删除的学生信息</h2>
                 </td>
             </tr>
             <tr>
