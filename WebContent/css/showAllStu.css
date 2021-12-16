@@ -1,0 +1,145 @@
+body{
+    background-color: #9827a6;
+}
+h1{
+    color: white;
+    margin-left: 20px;
+    margin-top: 22px;
+}
+.navBox{
+    color: white;
+    margin-left: 40px;
+    /*position:relative;*/
+    /*top: -177px;*/
+    text-decoration: none;
+    height: 70px;
+    width: 150px;
+}
+a{
+    margin: auto;
+    color: black;
+    text-decoration: none;
+}
+svg{
+    float: left;
+}
+.content{
+    width: 650px;
+    height: 525px;
+    /*float: right;*/
+    margin: auto;
+    /*margin-right: 100px;*/
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    box-shadow: -5px 0px 10px 5px #761e80;
+    background-color: white;
+    /*float: right;*/
+    border-radius:5px;
+}
+.tabContent{
+    height: 250px;
+}
+table{
+    margin:10px auto;
+    border-collapse: collapse;
+}
+th, td{
+    text-align: center;
+    width: 110px;
+    height: 35px;
+    border:2px inset #ffffff;
+}
+th{
+    background-color: #9827a6;
+    color:#FFFFFF;
+    font-weight: bold;
+}
+.searchBox{
+    margin:30px auto;
+    text-align: center;
+    width: 410px;
+    height: 50px;
+}
+.changePageButton{
+    width: 100px;
+    min-height: 20px;
+    display: inline-block;
+    background-color: #00A5FF;
+    border: 1px solid #0383c9;
+    color: #fff;
+    padding: 9px 14px;
+    font-size: 15px;
+    line-height: normal;
+    /*border-radius: 5px;*/
+    margin: 0 20px auto;
+    float: left;
+    border-radius: 5px;
+}
+.submitButton{
+    width: 100px;
+    min-height: 20px;
+    display: block;
+    background-color: #9827a6;
+    border: 1px solid #761e80;
+    color: #fff;
+    padding: 9px 14px;
+    font-size: 15px;
+    line-height: normal;
+    margin: auto;
+    border-radius: 5px;
+}
+.pageAdjust{
+    margin: 30px auto 10px auto;
+    width: 435px;
+    height: 50px;
+    text-align: center;
+}
+.searchLabel{
+    float: left;
+    margin: auto 10px;
+    position: relative;
+}
+.inputText{
+    width: 100px;
+    height: 30px;
+}
+.pageButton{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: #00A5FF;
+    border: 1px solid #0383c9;
+    color: #fff;
+    /*padding: 9px 9px;*/
+    text-align: center;
+    font-size: 15px;
+    line-height: normal;
+    margin: 0 5px auto;
+    float: left;
+}
+.currentPageButton{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: #017ec2;
+    border: 1px solid #004e78;
+    color: #fff;
+    /*padding: 9px 9px;*/
+    text-align: center;
+    font-size: 15px;
+    line-height: normal;
+    margin: 0 5px auto;
+    float: left;
+}
+.pageAdjustContent{
+    margin: auto;
+    width: 300px;
+    height: 50px;
+    display: inline;
+}
+.pageInfo{
+    margin: auto;
+    width: 192px;
+    height: 30px;
+    text-align: center;
+}

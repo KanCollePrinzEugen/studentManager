@@ -1,0 +1,74 @@
+body{
+    background-color: #00A5FF;
+}
+.content{
+    width: 650px;
+    height: 210px;
+    /*float: right;*/
+    margin: 100px auto;
+    /*margin-right: 100px;*/
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    box-shadow: -5px 0px 10px 5px  royalblue;
+    background-color: white;
+    /*float: right;*/
+    border-radius:5px;
+}
+h1{
+    color: white;
+    margin-left: 20px;
+    margin-top: 22px;
+}
+h2{
+    color: white;
+    margin-left: 20px;
+}
+.stuListButton{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    left: auto;
+    margin: auto;
+    color: teal;
+    background-color: teal;
+}
+.modifyStuInfo{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    left: auto;
+    margin: auto;
+    color: #37bc49;
+    background-color: #37bc49;
+}
+.delStuInfo{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    left: auto;
+    margin: auto;
+    color: #4a77d4;
+    background-color: #4a77d4;
+}
+.logoutButton{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    left: auto;
+    margin: auto;
+    color: orange;
+    background-color: orange;
+}
+.mainFunc{
+    width: 100px;
+    height: 110px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 50px;
+    text-align: center;
+}
+a{
+    margin: auto;
+    color: black;
+    text-decoration: none;
+}

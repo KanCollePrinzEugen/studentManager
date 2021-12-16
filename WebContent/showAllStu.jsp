@@ -11,157 +11,31 @@
 <html>
 <head>
     <title>学生列表</title>
-    <style>
-        .divideBox{
-            /*height: 40px;*/
-            background-color: steelblue;
-            color: white;
-            border-radius: 2px;
-            height: 5px;
-            width: 100%;
-            top: 125px;
-            left: 0;
-            position: absolute;
-        }
-        .content{
-            position: relative;
-            top: 100px;
-            margin:100px auto;
-            width: auto;
-            text-align: center;
-        }
-        .tabContent{
-            height: 250px;
-        }
-        table{
-            margin:10px auto;
-            border-collapse: collapse;
-        }
-        th, td{
-            text-align: center;
-            width: 110px;
-            height: 35px;
-            border:2px inset #ffffff;
-        }
-        th{
-            background-color:#00A5FF;
-            color:#FFFFFF;
-            font-weight: bold;
-        }
-        .topBox{
-            background-color: #4a77d4;
-            color: white;
-            top: 0;
-            left: 0;
-            width: 100%;
-            position: absolute;
-        }
-        .searchBox{
-            margin:20px auto;
-            text-align: center;
-            width: 410px;
-            height: 100px;
-        }
-        .changePageButton{
-            width: 100px;
-            min-height: 20px;
-            display: inline-block;
-            background-color: #4ad471;
-            border: 1px solid #37bc49;
-            color: #fff;
-            padding: 9px 14px;
-            font-size: 15px;
-            line-height: normal;
-            /*border-radius: 5px;*/
-            margin: 0 20px auto;
-            float: left;
-        }
-        .submitButton{
-            width: 100px;
-            min-height: 20px;
-            display: block;
-            background-color: #4a77d4;
-            border: 1px solid #3762bc;
-            color: #fff;
-            padding: 9px 14px;
-            font-size: 15px;
-            line-height: normal;
-            margin: auto;
-        }
-        .pageAdjust{
-            margin: 30px auto 10px auto;
-            width: 435px;
-            height: 50px;
-            text-align: center;
-        }
-        .searchLabel{
-            float: left;
-            margin: auto 10px;
-            position: relative;
-        }
-        .inputText{
-            width: 100px;
-            height: 30px;
-        }
-        .pageButton{
-            height: 40px;
-            width: 40px;
-            display: inline-block;
-            background-color: #4ad471;
-            border: 1px solid #37bc49;
-            color: #fff;
-            /*padding: 9px 9px;*/
-            text-align: center;
-            font-size: 15px;
-            line-height: normal;
-            border-radius: 5px;
-            margin: 0 5px auto;
-            float: left;
-        }
-        .currentPageButton{
-            height: 40px;
-            width: 40px;
-            display: inline-block;
-            background-color: #298945;
-            border: 1px solid #166621;
-            color: #fff;
-            /*padding: 9px 9px;*/
-            text-align: center;
-            font-size: 15px;
-            line-height: normal;
-            border-radius: 5px;
-            margin: 0 5px auto;
-            float: left;
-        }
-        .pageAdjustContent{
-            margin: auto;
-            width: 300px;
-            height: 50px;
-            display: inline;
-        }
-        .pageInfo{
-            margin: auto;
-            width: 192px;
-            height: 30px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/showAllStu.css">
 </head>
 <body>
-<div class="content">
-    <div class="topBox">
-        <h1 style=" margin-left: 30px; color: white">全体学生列表</h1>
-    </div>
+    <h1 style=" margin-left: 30px; color: white">全体学生列表</h1>
     <div class="navBox">
         <a href="main.jsp">
-            <svg style="top: 95px; left: 10px; position: absolute" t="1639403540811" class="icon"
-                 viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2304" width="25"
-                 height="25"><path d="M73.142857 490.569143L565.248 1024l95.085714-96.548571-320.512-343.332572 611.035429 1.462857v-146.285714H317.732571l344.649143-344.795429L565.248 0z" p-id="2305"></path></svg>
+            <svg t="1639619928226" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12313" width="35" height="35"><path d="M511.213557 65.37494c-245.875761 0-445.212719 199.317535-445.212719 445.184245s199.336958 445.184245 445.212719 445.184245c245.898275 0 445.222953-199.316511 445.222953-445.184245S757.111832 65.37494 511.213557 65.37494zM511.236071 911.129326c-220.774055 0-400.391095-180.345438-400.391095-400.919089 0-220.570581 179.61704-400.004253 400.391095-400.004253 220.776102 0 400.391095 179.433672 400.391095 400.004253C911.627165 730.783889 732.012172 911.129326 511.236071 911.129326zM711.648568 488.437351 348.187037 488.437351l132.332216-141.90494c8.681062-8.691963 8.681062-22.772656 0-31.465642-8.703576-8.692986-22.786893-8.692986-31.467955 0L267.533901 511.168052l178.72468 197.47149c4.356393 4.347005 10.049279 6.541997 15.733977 6.541997 5.692886 0 11.387818-2.194992 15.733977-6.541997 8.694366-8.67252 8.694366-22.750143 0-31.469736l-130.961953-144.224776 364.885008 0c12.290411 0 22.254752-9.954723 22.254752-22.255887C733.90332 498.410494 723.937956 488.437351 711.648568 488.437351z" p-id="12314" fill="#ffffff"></path></svg>
         </a>
-        <a href="main.jsp"><h2 style="top: 77px; left: 45px; position: absolute; font-size: 20px; color: black">功能面板</h2></a>
-        <div class="divideBox"></div>
+        <a href="main.jsp"><h2 style="color: white">功能面板</h2></a>
     </div>
     <div class="content">
+        <%
+                    /*获取学生列表*/
+//                ArrayList<Student> allStu = (ArrayList<Student>) request.getSession().getAttribute("allStudent");
+                    ArrayList<Student> stuList = (ArrayList<Student>) request.getSession().getAttribute("stuList");
+                    int totalPages = (Integer) request.getSession().getAttribute("totalPages");
+                    int currentPage = (Integer) request.getSession().getAttribute("currentPageNum");
+        %>
+            <div class="searchBox">
+                <label class="searchLabel">
+                    请输入要查询的页号：
+                    <input class="inputText" type="number" min="1" max="<%= totalPages%>" name="pageNum">
+                </label>
+                <input class="submitButton" type="submit" value="查询">
+            </div>
         <div class="tabContent">
             <table>
                 <tr>
@@ -170,11 +44,6 @@
                     <th>地址</th>
                 </tr>
                 <%
-                    /*获取学生列表*/
-//                ArrayList<Student> allStu = (ArrayList<Student>) request.getSession().getAttribute("allStudent");
-                    ArrayList<Student> stuList = (ArrayList<Student>) request.getSession().getAttribute("stuList");
-                    int totalPages = (Integer) request.getSession().getAttribute("totalPages");
-                    int currentPage = (Integer) request.getSession().getAttribute("currentPageNum");
                     /*提取学生信息*/
                     for (Student stu : stuList) {
                         String name = stu.getStuName();
@@ -270,15 +139,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     总共有<%=totalPages%>页 </p>
             </div>
-            <div class="searchBox">
-                <label class="searchLabel">
-                    请输入要查询的页号：
-                    <input class="inputText" type="number" min="1" max="<%= totalPages%>" name="pageNum">
-                </label>
-                <input class="submitButton" type="submit" value="查询">
-            </div>
         </form>
     </div>
-</div>
 </body>
 </html>
