@@ -13,12 +13,14 @@
          width: 500px;
          height: 300px;
          text-align: center;
-         font-family: "PingFang SC", STHeiti;
+          font-family: "PingFang SC", STHeiti, serif;
          margin: 10% auto 0;
          padding: 25px;
-         background-color: lavenderblush;
-         -webkit-box-shadow: 4px 4px 5px #999;
-         box-shadow: 4px 4px 5px #999;
+         /*background-color: lavenderblush;*/
+         -webkit-box-shadow: 4px 4px 5px #565656;
+         box-shadow: 4px 4px 5px #565656;
+          background-color:lavenderblush;
+          background-color:rgba(255,240,245,0.6);
       }
       a {
          text-decoration: none;
@@ -40,7 +42,7 @@
 
 </head>
 
-<body>
+<body style="background: url('./img/WinterRoofs_ZH-CN5091303265_1920x1080.jpg') ">
     <div class="bigBox">
        <h1 align="center">欢迎使用学生管理系统</h1>
         <a href="login.jsp">

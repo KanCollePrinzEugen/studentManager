@@ -27,6 +27,24 @@ public class LoginServlet extends HttpServlet {
 
         String stuId = req.getParameter("sno");
         String stuPassword = req.getParameter("pwd");
+        String verifyCode = req.getParameter("verifyCode");
+        String sessionCacheData = (String) req.getSession().getAttribute("sessionCacheData");
+
+        if(sessionCacheData == null){
+            req.setAttribute("msg", "请不要重复提交");
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+            return;
+        }
+
+        if(! sessionCacheData.equalsIgnoreCase(verifyCode)){
+            //用户输入错误
+            // * 存放request作用域
+            req.setAttribute("msg", "验证码输入错误");
+            // * 请求转发
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+
+            return;
+        }
 
         int _stuId = Integer.parseInt(stuId);
 

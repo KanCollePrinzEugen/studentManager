@@ -9,20 +9,21 @@
 <html>
 <head>
     <title>修改学生信息</title>
-    <style type="text/css">
+    <style>
         body {
             background-color: azure;
         }
         .bigBox{
             width: 500px;
-            height: 400px;
+            height: 450px;
             text-align: center;
             font-family: "PingFang SC", STHeiti, serif;
             margin: 10% auto 0;
             padding: 25px;
             background-color: cornsilk;
             -webkit-box-shadow: 4px 4px 5px #999;
-            box-shadow: 4px 4px 5px #999;
+            box-shadow: 4px 4px 5px #565656;
+            background-color:rgba(255,240,245,0.6);
         }
         form{
             width: 200px;
@@ -61,12 +62,27 @@
             height: 30px;
             margin: auto;
         }
-
+        .verifyCodeInput{
+            width: 130px;
+            height: 30px;
+        }
+        .verifyCode{
+            position: relative;
+            top: 10px;
+        }
     </style>
 
 </head>
-<body>
+<body style="background: url('./img/WinterRoofs_ZH-CN5091303265_1920x1080.jpg') ">
 <div class="bigBox">
+    <%
+        String msg = (String)request.getAttribute("msg");
+        if(msg != null){
+    %>
+    <script type="text/javascript"> alert("<%=msg%>");</script>
+    <%
+        }
+    %>
     <a href="main.jsp" style="position: relative; left: -225px; text-decoration: none">返回</a>
     <form action="ModifyServlet" method="post">
         <table>
@@ -107,6 +123,14 @@
                 <td class="rightTD">
                     <label>
                         <input class="inputText" type="text" name="address" placeholder="地址"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="rightTD">
+                    <label>
+                        <input class="verifyCodeInput" type="text" name="verifyCode" placeholder="验证码"/>
+                        <img src="VerifyCodeServlet" class="verifyCode"  alt="verifyCode"/>
                     </label>
                 </td>
             </tr>

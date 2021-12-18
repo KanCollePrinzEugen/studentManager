@@ -13,14 +13,15 @@
     }
     .box{
         width: 500px;
-        height: 300px;
+        height: 350px;
         text-align: center;
         font-family: "PingFang SC", STHeiti, serif;
         margin: 10% auto 0;
         padding: 25px;
         background-color: cornsilk;
         -webkit-box-shadow: 4px 4px 5px #999;
-        box-shadow: 4px 4px 5px #999;
+        box-shadow: 4px 4px 5px #565656;
+        background-color:rgba(255,240,245,0.6);
     }
     form{
         width: 230px;
@@ -55,18 +56,34 @@
         font-size: 15px;
         line-height: normal;
         /*border-radius: 5px;*/
-        margin: 30px auto;
+        margin: 20px auto;
     }
     tr{
         height: 60px;
         margin-bottom: 10px;
     }
+    .verifyCodeInput{
+        width: 130px;
+        height: 35px;
+    }
+    .verifyCode{
+        position: relative;
+        top: 10px;
+    }
 </style>
 <head>
     <title>删除学生信息</title>
 </head>
-<body>
+<body style="background: url('./img/WinterRoofs_ZH-CN5091303265_1920x1080.jpg') ">
 <div class="box">
+    <%
+        String msg = (String)request.getAttribute("msg");
+        if(msg != null){
+    %>
+    <script type="text/javascript"> alert("<%=msg%>");</script>
+    <%
+        }
+    %>
     <a href="main.jsp" style="position: relative; left: -225px; text-decoration: none">返回</a>
     <form action="DeleteServlet" method="post">
         <table>
@@ -86,6 +103,14 @@
                 <td class="rightTD">
                     <label>
                         <input class="inputText" type="text" name="pwd" placeholder="密码"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="rightTD">
+                    <label>
+                        <input class="verifyCodeInput" type="text" name="verifyCode" placeholder="验证码"/>
+                        <img src="VerifyCodeServlet" class="verifyCode"  alt="verifyCode"/>
                     </label>
                 </td>
             </tr>

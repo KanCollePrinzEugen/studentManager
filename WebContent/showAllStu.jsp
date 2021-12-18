@@ -1,12 +1,5 @@
 <%@ page import="work.stu.po.Student" %>
 <%@ page import="java.util.ArrayList" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: prinzeugen
-  Date: 2021/11/18
-  Time: 5:16 下午
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>

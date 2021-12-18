@@ -10,14 +10,15 @@
     }
     .bigBox{
         width: 500px;
-        height: 350px;
+        height: 500px;
         text-align: center;
         font-family: "PingFang SC", STHeiti, serif;
-        margin: 10% auto 0;
+        margin: 5% auto 0;
         padding: 25px;
         background-color: linen;
         -webkit-box-shadow: 4px 4px 5px #999;
-        box-shadow: 4px 4px 5px #999;
+        box-shadow: 4px 4px 5px #565656;
+        background-color:rgba(255,240,245,0.6);
     }
     form{
         width: 250px;
@@ -30,18 +31,20 @@
     }
     .rightTD{
         width: 170px;
+        margin-top:20px;
     }
     .leftTD{
         width: 80px;
     }
     .inputText{
         width: 200px;
-        height: 20px;
+        height: 30px;
+        margin-top:20px;
     }
     tr{
         height: 40px;
     }
-    .form_top{
+    .formTop{
         height: 50px;
         font-weight: bold;
     }
@@ -58,14 +61,31 @@
         /*border-radius: 5px;*/
         margin: 20px auto;
     }
+    .verifyCodeInput{
+        width: 130px;
+        height: 30px;
+        margin-top:20px;
+    }
+    .verifyCode{
+        position: relative;
+        top: 10px;
+    }
 </style>
 </head>
-<body>
+<body style="background: url('./img/WinterRoofs_ZH-CN5091303265_1920x1080.jpg') ">
+    <%
+        String msg = (String)request.getAttribute("msg");
+        if(msg != null){
+    %>
+    <script type="text/javascript"> alert("<%=msg%>");</script>
+    <%
+        }
+    %>
    <div class="bigBox">
        <a href="index.jsp" style="position: relative; left: -225px; text-decoration: none">返回</a>
       <form action="RegisterServlet" method="post">
         <table>
-          <tr class="form_top">
+          <tr class="formTop">
             <td align="center" style="font-size:20px">
                             请输入您的注册信息
             </td>
@@ -73,38 +93,46 @@
           <tr>
             <td class="rightTD">
                 <label>
-                    <input class="input_txt" type="text" name="sno" placeholder="学号"/>
+                    <input class="inputText" type="text" name="sno" placeholder="学号"/>
                 </label>
             </td>
           </tr>
           <tr>
             <td class="rightTD">
                 <label>
-                    <input  class="input_txt" type="text" name="sname" placeholder="姓名"/>
+                    <input  class="inputText" type="text" name="sname" placeholder="姓名"/>
                 </label>
             </td>
           </tr>
           <tr>
             <td class="rightTD">
                 <label>
-                    <input class="input_txt" type="text" name="pwd" placeholder="密码"/>
+                    <input class="inputText" type="text" name="pwd" placeholder="密码"/>
                 </label>
             </td>
           </tr>
           <tr>
             <td class="rightTD">
                 <label>
-                    <input class="input_txt" type="text" name="age" placeholder="年龄"/>
+                    <input class="inputText" type="text" name="age" placeholder="年龄"/>
                 </label>
             </td>
           </tr>
           <tr>
             <td class="rightTD">
                 <label>
-                    <input class="input_txt" type="text" name="address" placeholder="地址"/>
+                    <input class="inputText" type="text" name="address" placeholder="地址"/>
                 </label>
             </td>
           </tr>
+            <tr>
+                <td class="rightTD">
+                    <label>
+                        <input class="verifyCodeInput" type="text" name="verifyCode" placeholder="验证码"/>
+                        <img src="VerifyCodeServlet" class="verifyCode"  alt="verifyCode"/>
+                    </label>
+                </td>
+            </tr>
           <tr>
             <td class="leftTD" colspan="2" style="text-align: center;"> 
                <input class="submitButton" type="submit" value="注册">
