@@ -6,7 +6,7 @@ import work.stu.vo.StuListByPage;
 import java.util.ArrayList;
 
 /**
- * @author 何逸哲
+ * @author prinzeugen
  */
 public interface StudentService {
 
